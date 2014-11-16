@@ -1,5 +1,9 @@
 # Analiza podatkov s programom R, 2014/15
 
+Avtor: Tomaž Pustotnik
+
+Mentor: asist. dr. Janoš Vidali
+
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2014/15.
 
 ## Tematika
