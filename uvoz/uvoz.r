@@ -10,7 +10,8 @@
 
 uvoziNogometasi <- function(){
   return(read.csv2(file="podatki/podatki.csv", header=TRUE, sep=";"))
-}
+} 
+
 # Zapišimo podatke v razpredelnico nogometaših.
 cat("Uvažam podatke o nogometaših...\n")
 nogometasi <- uvoziNogometasi()
