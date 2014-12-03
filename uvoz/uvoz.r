@@ -1,6 +1,6 @@
 # 2. faza: Uvoz podatkov
 
-# Funkcija, ki uvozi podatke iz datoteke druzine.csv
+# Funkcija, ki uvozi podatke iz datoteke podatki.csv
 #uvoziDruzine <- function() {
 #  return(read.table("podatki/druzine.csv", sep = ";", as.is = TRUE,
 #                      row.names = 1,
