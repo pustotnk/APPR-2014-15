@@ -5,5 +5,5 @@ dev.off()
 
 pdf("slike/grafi2.pdf",paper="a4")
 a<-rownames(NOGOMETASI)
-barplot(NOGOMETASI[NOGOMETASI$Appearances>80,'Appearances'],names.arg = a[NOGOMETASI$Appearances>80], ylab="ŠTEVILO NASTOPOV", main= 'ŠTEVILO IGRALCEV Z VEČ KOT 80 NASTOPI', las=2, cex.names=0.75, col="red")
+barplot(NOGOMETASI[NOGOMETASI$Appearances>120,'Appearances'],names.arg = a[NOGOMETASI$Appearances>120],xlab=" ", ylab="ŠTEVILO NASTOPOV", main= 'ŠTEVILO IGRALCEV Z VEČ KOT 80 NASTOPI', las=2, cex.names=0.75, col="red")
 dev.off()
