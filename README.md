@@ -1,19 +1,14 @@
 # Analiza podatkov s programom R, 2014/15
-
-<<<<<<< HEAD
-=======
 Avtor: Tomaž Pustotnik
 
 Mentor: asist. dr. Janoš Vidali
->>>>>>> efd620bc826ca9bcbf45914a64c0e46ee28e038f
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2014/15.
 
 ## Tematika
 
-<<<<<<< HEAD
-živjo
-=======
+
+
 Za tematiko moje seminarske naloge, sem si kot navijač nogometnega kluba FC Barcelona izbral analizo podatkov najboljših štirideset strelcev vseh časov, ki so igrali za ta klub. Naloge se bom lotil tako, da bom podatke iz spletne strani prenesel v program Microsoft Office Excel Worksheet in oblikoval tabelo ki se bo od originalne razlikovala v tem, da bom dodal par podatkov s katerimi bom kasneje lažje operiral, nekatere pa vzel ven iz originalne tabele. Za vsakega igralca bom podal:
 
 * državo iz katere igralec prihaja ( imenska spremenljivka ).
@@ -32,7 +27,6 @@ Svoje potatke bom uvozil iz spletnega medija:
 
 http://en.wikipedia.org/wiki/List_of_FC_Barcelona_players
 
->>>>>>> efd620bc826ca9bcbf45914a64c0e46ee28e038f
 
 ## Program
 
