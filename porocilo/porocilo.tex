@@ -1,15 +1,15 @@
 \documentclass[11pt,a4paper]{article}
-
 \usepackage[slovene]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{graphicx}
-
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{pdfpages}
 \pagestyle{plain}
-
 \begin{document}
 \title{Poročilo pri predmetu \\
 Analiza podatkov s programom R}
-\author{Študent FMF}
+\author{Tomaž Pustotnik}
 \maketitle
 
 \section{Izbira teme}
@@ -30,8 +30,11 @@ Za tematiko moje seminarske naloge, sem si kot navijač nogometnega kluba FC Bar
 
 Svoje potatke bom uvozil iz spletnega medija: 
 
-http://en.wikipedia.org/wiki/List_of_FC_Barcelona_players
 
+\begin{enumerate}
+\item{\url{http://en.wikipedia.org/wiki/List_of_FC_Barcelona_players
+}}
+\end{enumerate}
 
 \section{Obdelava, uvoz in čiščenje podatkov}
 V začetku druge faze sem uvozil tabelo, ki sem jo dobil tako, da sem iz spletne strani podatke pretvoril v Excel 2013, nato pa jih shranil v CSV obliki. Tabeli sem dodal dotaten stolpec ki glede na število nastopov pove kakšno "oznako" ima igralec v klubu. Tabelo sem malo vizualno polepšal ter uporabil ukaz row.names, da sem pridobil imena vrstic. 
@@ -40,10 +43,9 @@ Sledilo je konstruiranje grafov. Najprej sem se odločil da bom izdelal grafe o 
 
 \section{Analiza in vizualizacija podatkov}
 
-\includegraphics{../slike/povprecna_druzina.pdf}
+
 
 \section{Napredna analiza podatkov}
 
-\includegraphics{../slike/naselja.pdf}
 
 \end{document}
