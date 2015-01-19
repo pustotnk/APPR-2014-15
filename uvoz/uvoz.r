@@ -9,7 +9,7 @@
 #}
 
 uvoziNogometasi <- function(){
-  return(read.csv2(file="podatki/podatki.csv",row.names = 1,header=TRUE,fileEncoding = "Windows-1250"))
+  return(read.csv2(file="podatki/barcelona.csv",row.names = 1,header=TRUE,fileEncoding = "UTF-8"))
 } 
 
 # Zapišimo podatke v razpredelnico nogometaših.
