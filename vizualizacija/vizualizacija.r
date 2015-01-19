@@ -17,11 +17,11 @@ stevilo <- stevilo[order(stevilo)]
 barve <- topo.colors(length(stevilo))[match(drzave, stevilo)]
 names(barve) <- names(drzave)
 barve.zemljevid <- barve[as.character(svet1$name_long)]
-barve.zemljevid[is.na(barve.zemljevid)] <- "white"
+barve.zemljevid[is.na(barve.zemljevid)] <- "black"
 
-mojsvet <- svet1[svet1$name_long %in% imenadrzav,]
-co <- coordinates(mojsvet)
-imena.drzav <- as.character(mojsvet$name_long)
+svet2 <- svet1[svet1$name_long %in% imenadrzav,]
+co <- coordinates(svet2)
+imena.drzav <- as.character(svet2$name_long)
 rownames(co) <- imena.drzav
 co['England',2] <- co['England',2]+1.2
 co['England',1] <- co['England',1]+1.2
