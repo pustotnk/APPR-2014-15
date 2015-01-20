@@ -24,6 +24,11 @@ co <- coordinates(svet2)
 imena.drzav <- as.character(svet2$name_long)
 rownames(co) <- imena.drzav
 
+names(imena.drzav) <- imenadrzav
+imena.drzav["Paraguay"] <- "NL"
+
+names(imena.drzav) <- imenadrzav
+imena.drzav["Portugal"] <- "P"
 
 
 co['England',2] <- co['England',2]+1.2
@@ -45,5 +50,6 @@ pdf("slike/igralci.pdf", width=8.27, height=11.96)
 plot(svet1, xlim=c(-69, 50), ylim=c(-33,73), col=barve.zemljevid, bg="lightblue")
 text(co,labels=imena.drzav,pos = 1, cex = 0.4,)
 points(coordinates(stadion), type = "p", pch = 4, cex = 0.5, col = "orange")
+
 legend("topleft", title = 'število igralcev po državah', text.font = 3,legend = stevilo, fill = topo.colors(length(stevilo)))
 dev.off()
