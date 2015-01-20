@@ -31,13 +31,15 @@ names(imena.drzav) <- imenadrzav
 imena.drzav["Portugal"] <- "P"
 
 
+
 co['England',2] <- co['England',2]+1.2
 co['England',1] <- co['England',1]+1.2
 co['Denmark',2] <- co['Denmark',2]+2.0
 co['Netherlands',2] <- co['Netherlands',2]+2.0
+co['Netherlands',1] <- co['Netherlands',1]-0.2
 co['Portugal',2] <- co['Portugal',2]+1.2
 co['Portugal',1] <- co['Portugal',1]-0.3
-co['Chile',1] <- co['Chile',1]-0.8
+co['Chile',1] <- co['Chile',1]-0.6
 co['Paraguay',2] <- co['Paraguay',2]+2.0
 co['Austria',2] <- co['Austria',2]+2.0
 co['Austria',1] <- co['Austria',1]+0.3
@@ -48,8 +50,8 @@ co['Germany',1] <- co['Germany',1]-0.7
 stadion<-data.frame("long" = c(2.12280), "lat"= c(41.38087))
 pdf("slike/igralci.pdf", width=8.27, height=11.96)
 plot(svet1, xlim=c(-69, 50), ylim=c(-33,73), col=barve.zemljevid, bg="lightblue")
-text(co,labels=imena.drzav,pos = 1, cex = 0.4,)
-points(coordinates(stadion), type = "p", pch = 4, cex = 0.5, col = "orange")
 
+text(co,labels=imena.drzav,pos = 1, cex = 0.4, col='red')
+points(coordinates(stadion), type = "p", pch = 4, cex = 0.5, col = "orange")
 legend("topleft", title = 'število igralcev po državah', text.font = 3,legend = stevilo, fill = topo.colors(length(stevilo)))
 dev.off()
