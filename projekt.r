@@ -1,3 +1,4 @@
+source("fontconfig.r", encoding = "UTF-8");
 # # Pobrišemo PDF-je in počistimo delovno okolje
 # silent <- TRUE
 # source("clearpdf.r", encoding = "UTF-8")
