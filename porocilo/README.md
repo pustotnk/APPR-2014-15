@@ -9,7 +9,7 @@ OPIS FAZ IN POROČILO
 
 >>>>>>> bf9baa7e713dcce541b1770042f7dc18473e31ee
 
-Za tematiko moje seminarske naloge, sem si kot navijač nogometnega kluba FC Barcelona izbral analizo podatkov najboljših štirideset strelcev vseh časov, ki so igrali za ta klub. Naloge se bom lotil tako, da bom podatke iz spletne strani prenesel v program Microsoft Office Excel Worksheet in oblikoval tabelo ki se bo od originalne razlikovala v tem, da bom dodal par podatkov s katerimi bom kasneje lažje operiral, nekatere pa vzel ven iz originalne tabele. Za vsakega igralca bom podal:
+Za tematiko moje seminarske naloge, sem si kot navijač nogometnega kluba FC Barcelona izbral analizo podatkov najboljših štirideset strelcev vseh časov, ki so igrali za ta klub.  Naloge se bom lotil tako, da bom podatke iz spletne strani prenesel v program Microsoft Office Excel Worksheet in oblikoval tabelo ki se bo od originalne razlikovala v tem, da bom dodal par podatkov s katerimi bom kasneje lažje operiral, nekatere pa vzel ven iz originalne tabele. Za vsakega igralca bom podal:
 
 * državo iz katere igralec prihaja ( imenska spremenljivka ).
 
