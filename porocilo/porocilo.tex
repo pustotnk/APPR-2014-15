@@ -49,17 +49,66 @@ Sledilo je konstruiranje grafov. Najprej sem se odločil, da bom izdelal grafe o
 \includegraphics[width=1.35\textwidth]{../slike/grafi1.pdf}
 }
 \makebox[\textwidth][c]{
-\includegraphics[width=1.35\textwidth]{../slike/grafi2.pdf}
+\includegraphics[width=1.6\textwidth]{../slike/grafi2.pdf}
 }
-
+\newpage
 \section{Analiza in vizualizacija podatkov}
 Tretjo fazo sem začel z uvozom zemljevida ki bo prikazoval s katerih držav in kontinentov prihajajo igralci Barcelone. Na zemljevidu so razvidni naslednji kontinenti: Evropa, Afrika, Južna Amerika, iz naslednjih kontinetov so vsi moji igralci, za lepšo postavitev in prikaz pa sem dodal še Severno Ameriko. Z ukazi in malo igranja sem zemljevidu dodal imena, ter jih nato, ker so bili narobe postavljeni, z uporabo koordinat prestavil na pravo mesto. Našel sem tudi koordinate mojega stadiona, ter jih vnesel na zemljevid, na točki koordinat sedaj stoji križec ki sem ga obarval oranžno. Nekatere države sem zaradi dolžine imena skrajšal na njihove uradne kratice. Poigral sem se še z barvami, zemljevid in države, ki niso pomembne sem pobarval s črno,...
 
 \makebox[\textwidth][c]{
-\includegraphics[width=1.2\textwidth]{../slike/igralci.pdf}
+\includegraphics[width=1.4\textwidth]{../slike/igralci.pdf}
 }
 
 \section{Napredna analiza podatkov}
+
+Že pred četrto fazo sem se odločil, da bom v tej fazi poiskusil podati neke konkretne napovedi in priti do nekih zaključkov. Odločil sem se tudi, da bom probal dokazati ali izpodbiti trditev, da je Lionel Messi najboljši igralec v vseh merilih v zgodovini kluba FC Barcelona. Torej, četrto fazo sem začel s tem da sem naredil in uvozil novo tabelo najboljših igralcev z dodatnim stolpcem golov za reprezentanco z imenom "Najboljsiigralci". Podatke za reprezentančne zadetke sem za vse igralce našel na wikipediji, štel pa sem le dane gole za člansko reprezentanco. Nekateri igralci so igrali za več reprezentanc, kar jim je omogočala sprememba državljanstva ali dvojno državljanstvo, zato sem njihove podatke o danih golih le seštel. 
+
+Po uvozu nove tabele "Najboljsiigralci", sem se odločil, da bom s pomočjo hierarhičnega urejanja podatkov ugotovil kdo je v svoji karieri dosegel največ. Odločil sem se, da bom za ta podatek uporabil dva faktorja in sicer število golov za barcelono ter število golov za reprezentanco. Iz novouvožene tabele sem s funkcijo scale(as.matrix()) normaliziral podatke iz stolpcev. Nato sem uporabil funkcijo dist() in tako dobil matriko razdalj, ki sem jo nameraval uporabiti pri hierarhičnem razvrščanju podatkov. Igralce sem tako razdelil v štiri uspešnostne skupine. 
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.3\textwidth]{../slike/najboljsi.pdf}
+}
+\newpage
+S tem postopkom sem hotel ugotoviti, če kateri izmed igralcev res izstopa ( je osamelec v uspešnostni skupini ). Po mojih predvidevanjih je bil v prvi uspešnostni skupini Lionel Messi. Presenetilo pa me je, da je v tej skupini sam, saj to pomeni da se s svojim številom danih golov nekako lahko primerja z vsoto golov 50/4 ( približno 12 ) igralcev. Če smo malo nematematični in sarkastični bi lahko rekli da v tem primeru velja 1=12. Za boljšo predstavitev podatkov sem poleg dendagrama narisal še en graf, ki le na malo lepši način prikazuje zgornjega. 
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.2\textwidth]{../slike/najboljsi1.pdf}
+}
+\newpage
+Zgornja ugotovitev je izpodbila mojo začetno trditev o tem, da je Lionel Messi približno tako dober kot ostali, le da se o njem, zaradi razvoja medijev, govori več kot se je o ostalih igralcih pred časom. Messi med najboljšimi strelci res iztopa.
+
+Po tej ugotovitvi sem se odločil, da bom za mojo napoved izbral nekaj v zvezi z Lionelem Messijem. Odločil sem se, da bom poiskušal napovedati najbolj pomembno: njegove gole za Barcelono in reprezentanco. Zdele se mi je smiselno preveriti, če je bil Messi v zadnjih letih kdaj resneje poškodovan, saj bi le to vplivalo na to koliko zadetkov je zabil. Ugotovil sem, da nikoli ni bil odsoten toliko časa, da bi to vplivalo na uspešnost njegove sezone. Ugotoviti sem moral še do katerega leta bom napoved naredil, zdelo se mi je smiselno preveriti povprečno starost pri kateri profesionalni nogometaš zapusti "večje" nogometne zelenice. Ker je povprečna starost upokojitve okrog 37 let in ima Messi 27 let, sem napoved naredil do leta 2024 oziroma za 10 let. Zanemaril sem tudi spreminjanje klubov, saj dani goli s tem nimajo velike zveze.
+
+Najprej sem poiskal podatke za dane gole po letih. Nato sem podatke v csv obliki uvozil v program. Prvo tabelo sem poimenoval "goalsforbarcelona" drugo pa "internationalgoals". Nato sem v dva različna grafa z uporabo linearne, kvadratne in gamma metode prikazal napoved do leta 2024.
+
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/napoved.pdf}
+}
+
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/napoved1.pdf}
+}
+\newpage
+Messi naj bi po linearni metodi za Barcelono v letu 2024 zadel čez sto golov, po kvadratni okrog 40, po gamma metodi pa okrog 60 golov. Takoj lahko rečem da je linearna metoda nerealna, saj je tak podvig pri sedemintridesetih letih nerealen. Menim da je najbolj realna metoda v tem primeru kvadratna. Ker linearna metoda ne upošteva, da igralec v karieri doseže nek maksimum in potem pade, sem se odločil da jo bom pri nasledji napovedi golov za reprezentanco izpustil. Glede na kvadratno metodo bo Messi v letu 2024 zadel 22 golov, glede na gamma metodo pa okrog 15. Obe napovedi sta v mejah realnega.
+
+
+\underline{\textbf{Zaključek}}
+
+Za konec moram poudariti, da me je presenetilo tako veliko izstopanje enega igralca. Mislim da Barcelona danes enostavno ni Barcelona brez njega, takšne odgovornosti pa po mojem mnenju ni nosil noben igralec v zgodovini Barcelone.
+
+\begin{thebibliography}{9}
+\bibitem{1}
+\url{http://en.wikipedia.org/wiki/List_of_FC_Barcelona_players},
+{Accessed: 5-12-2014}
+\bibitem{2}
+\url{http://fcbarcelona.com},
+{Accessed: 2-03-2015}
+\bibitem{3}
+\url{http://http://en.wikipedia.org/wiki/Lionel_Messi},
+{Accessed: 2-03-2015}
+\end{thebibliography}
 
 
 \end{document}

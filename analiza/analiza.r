@@ -84,26 +84,47 @@ gam<-gam(danigoli~s(Leta))
 
 pdf("slike/napoved.pdf")
 napoved<-function(x,model){predict(model,data.frame(Leta=x))}
-plot(Leta,danigoli,xlim=c(2004,2024),ylim=c(0,70),
+plot(Leta,danigoli,xlim=c(2004,2024),ylim=c(0,120),
      xlab="Leto",ylab="Število danih zadetkov",
-     main="Napoved za število danih zadetkov Lionela Messija do konca leta 2024")
+     main="Napoved števila golov za Barcelono do l. 2024")
 curve(napoved(x, lin), add=TRUE,col="red")
 curve(napoved(x, kvad), add=TRUE, col="blue")
 curve(napoved(x, gam), add=TRUE, col="green")
-#text(2006.5,37,paste0(round(lin$coefficients[1],2),round(lin$coefficients[2],2),"x"),cex=1.0)
-#text(2008.2,35,paste0(round(kvad$coefficients[1],2),round(kvad$coefficients[2],2),"x",round(kvad$coefficients[3],2),"x^2"),cex=1.0)
+text(2020,20,paste0(round(lin$coefficients[1],2),round(lin$coefficients[2],2),"x"),cex=1.0, col="red")
+text(2020,15,paste0(round(kvad$coefficients[1],2),round(kvad$coefficients[2],2),"x",round(kvad$coefficients[3],2),"x^2"),cex=1.0, col="blue")
 legend("topleft", c("Linerana metoda", "Kvadratna metoda","Gam metoda"),lty=c(1,1), col = c("red","blue","green"))
 dev.off()
 
 
 
+Leta<-row.names(internationalgoals)
+Leta<-as.numeric(Leta)
+danigoli<-internationalgoals$Goli 
+
+lin<-lm(danigoli~Leta)
+#abline(lin, col="red")
+
+kvad<-lm(danigoli~I(Leta^2)+Leta)
+#curve(predict(kvad, data.frame(Leta=x)),add=TRUE,col="blue")
+
+loess<-loess(danigoli~Leta)
+#curve(predict(loess, data.frame(Leta=x)),add=TRUE,col="magenta")
+
+library(mgcv)
+gam<-gam(danigoli~s(Leta))
+#curve(predict(gam, data.frame(Leta=x)),add=TRUE,col="green")
 
 
-# Narišemo graf v datoteko PDF.
-#cat("Rišem graf...\n")
-#pdf("slike/naselja.pdf", width=6, height=4)
-#plot(tabela[[1]], tabela[[4]],
- #    main = "Število naselij glede na površino občine",
-#     xlab = "Površina (km^2)",
- #    ylab = "Št. naselij")
-#dev.off()
+pdf("slike/napoved1.pdf")
+napoved<-function(x,model){predict(model,data.frame(Leta=x))}
+plot(Leta,danigoli,xlim=c(2004,2024),ylim=c(0,35),
+     xlab="Leto",ylab="Število danih zadetkov",
+     main="Napoved števila golov za reprezentanco do l. 2024")
+curve(napoved(x, kvad), add=TRUE, col="red")
+curve(napoved(x, gam), add=TRUE, col="blue")
+text(2020,26,paste0(round(kvad$coefficients[1],2),round(kvad$coefficients[2],2),"x",round(kvad$coefficients[3],2),"x^2"),cex=1.0, col="red")
+legend("topleft", c("Kvadratna metoda","Gam metoda"),lty=c(1,1), col = c("red","blue","green"))
+dev.off()
+
+
+
