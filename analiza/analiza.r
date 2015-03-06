@@ -124,7 +124,26 @@ curve(napoved(x, kvad), add=TRUE, col="red")
 curve(napoved(x, gam), add=TRUE, col="blue")
 text(2020,26,paste0(round(kvad$coefficients[1],2),round(kvad$coefficients[2],2),"x",round(kvad$coefficients[3],2),"x^2"),cex=1.0, col="red")
 legend("topleft", c("Kvadratna metoda","Gam metoda"),lty=c(1,1), col = c("red","blue","green"))
+plot(Leta,danigoli,xlim=c(2004,2024),ylim=c(0,70),
+     xlab="Leto",ylab="Število danih zadetkov",
+     main="Napoved za število danih zadetkov Lionela Messija do konca leta 2024")
+curve(napoved(x, lin), add=TRUE,col="red")
+curve(napoved(x, kvad), add=TRUE, col="blue")
+curve(napoved(x, gam), add=TRUE, col="green")
+#text(2006.5,37,paste0(round(lin$coefficients[1],2),round(lin$coefficients[2],2),"x"),cex=1.0)
+#text(2008.2,35,paste0(round(kvad$coefficients[1],2),round(kvad$coefficients[2],2),"x",round(kvad$coefficients[3],2),"x^2"),cex=1.0)
+legend("topleft", c("Linerana metoda", "Kvadratna metoda","Gam metoda"),lty=c(1,1), col = c("red","blue","green"))
 dev.off()
 
 
 
+
+
+# Narišemo graf v datoteko PDF.
+#cat("Rišem graf...\n")
+#pdf("slike/naselja.pdf", width=6, height=4)
+#plot(tabela[[1]], tabela[[4]],
+ #    main = "Število naselij glede na površino občine",
+#     xlab = "Površina (km^2)",
+ #    ylab = "Št. naselij")
+#dev.off()
